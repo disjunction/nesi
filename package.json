@@ -1,0 +1,19 @@
+{
+  "name": "nesi",
+  "version": "1.0.0",
+  "description": "Node.js ESI (edge side includes) standalone processor",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node test/jasmine.js "
+  },
+  "keywords": [
+    "esi"
+  ],
+  "author": "Konstantin Pogorelov <or@pluseq.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "nock": "^2.13.0",
+    "jasmine": "^2.3.2",
+    "jasmine-spec-reporter": "^2.4.0"
+  }
+}
