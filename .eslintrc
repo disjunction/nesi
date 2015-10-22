@@ -1,13 +1,40 @@
 {
-  "globals": {
-  },
-  "env": {
-    "node": true,
-    "es6": true
-  },
-  "rules": {
-  	"semi": 2,
-  	"curly": 2,
-    "quotes": [1, "double"]
-  }
+    "globals": {
+    },
+    "env": {
+        "node": true,
+        "es6": true
+    },
+
+    "extends": "eslint:recommended",
+
+    "rules": {
+        "no-cond-assign": 0,
+        "no-constant-condition": 0,
+        "no-empty": 0,
+        "no-fallthrough": 0,
+
+        "semi": 2,
+        "curly": 2,
+        "consistent-this": [2, "self"],
+        "indent": 2,
+        "linebreak-style": [2, "unix"],
+        "no-nested-ternary": 2,
+
+        "new-parens": 2,
+        "no-dupe-class-members": 2,
+        "require-yield": 2,
+        "arrow-spacing": 1,
+
+        "space-return-throw-case": 1,
+        "space-infix-ops": [1, {"int32Hint": false}],
+        "brace-style": 1,
+        "space-before-blocks": 1,
+        "operator-linebreak": [1, "before"],
+        "no-unneeded-ternary": 1,
+        "no-lonely-if": 1,
+        "key-spacing": 1,
+        "quotes": [1, "double"],
+        "no-trailing-spaces": [1, { "skipBlankLines": true }]
+    }
 }

@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node test/jasmine.js",
+    "lint": "node_modules/eslint/bin/eslint.js src || true",
     "coverage": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node node_modules/istanbul/lib/cli.js cover --include-all-sources test/jasmine.js"
   },
   "keywords": [

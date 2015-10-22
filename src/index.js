@@ -24,15 +24,13 @@ class EsiProcessor {
         while (match = this.attributeMatcher.exec(tagText)) {
             tag.attributes[match[1]] = match[2];
         }
-        
-        
 
         return tag;
     }
     
     /**
      * processes an (include) interpreted ESI tag
-     * 
+     *
      * @param {Object} tag
      * @returns {Promise}
      * @resolve {string}
@@ -54,7 +52,7 @@ class EsiProcessor {
 
     /**
      * returns a promise, which processes all tags, and resolves when all are ready
-     * 
+     *
      * @param {Array.<Object>} tags - array of tags, see interprete() method
      * @returns {Promise}
      * @resolve {Array.<string>}
@@ -98,7 +96,9 @@ class EsiProcessor {
                 
                 for (let i = 0; i < chunks.length; i++) {
                     result += chunks[i];
-                    let nextIndex = replacePoints[i+1] === undefined ? text.length : replacePoints[i+1].index,
+                    let nextIndex = replacePoints[i + 1] === undefined
+                            ? text.length
+                            : replacePoints[i + 1].index,
                         endOfTag = replacePoints[i].index + replacePoints[i][0].length;
                     result += text.substring(endOfTag, nextIndex);
                 }
