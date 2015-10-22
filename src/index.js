@@ -1,6 +1,6 @@
 "use strict";
 
-let http = require('http');
+let http = require("http");
 
 class EsiProcessor {
     constructor() {
@@ -24,6 +24,8 @@ class EsiProcessor {
         while (match = this.attributeMatcher.exec(tagText)) {
             tag.attributes[match[1]] = match[2];
         }
+        
+        
 
         return tag;
     }
@@ -37,11 +39,11 @@ class EsiProcessor {
      */
     processTag(tag) {
         if (!(tag instanceof Object)) {
-            throw new Error('processTag expects a tag Object as parameter');
+            throw new Error("processTag expects a tag Object as parameter");
         }
         return new Promise((resolve, reject) => {
             let request = http.get(tag.attributes.src, result => {
-                let body = '';
+                let body = "";
                 result.on("data", data => body += data)
                       .on("end", () => resolve(body));
             });
@@ -75,7 +77,7 @@ class EsiProcessor {
         let replacePoints = [],
             tags = [];
 
-        let match
+        let match;
         while (match = this.tagExtractor.exec(text)) {
             // store index and matched snippet,
             // so that we can later on replace it with result

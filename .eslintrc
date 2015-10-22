@@ -1,0 +1,13 @@
+{
+  "globals": {
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+  	"semi": 2,
+  	"curly": 2,
+    "quotes": [1, "double"]
+  }
+}

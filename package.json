@@ -4,8 +4,8 @@
   "description": "Node.js ESI (edge side includes) standalone processor",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node test/jasmine.js ",
-    "coverage": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node node_modules/istanbul/lib/cli.js cover --include-all-sources test/jasmine.js "
+    "test": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node test/jasmine.js",
+    "coverage": "NODE_PATH=$NODE_PATH:./src JASMINE_CONFIG_PATH=test/jasmine.json node node_modules/istanbul/lib/cli.js cover --include-all-sources test/jasmine.js"
   },
   "keywords": [
     "esi"
@@ -13,6 +13,7 @@
   "author": "Konstantin Pogorelov <or@pluseq.com>",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^1.7.3",
     "istanbul": "^0.4.0",
     "jasmine": "^2.3.2",
     "jasmine-spec-reporter": "^2.4.0",
