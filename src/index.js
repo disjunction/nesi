@@ -2,7 +2,7 @@
 
 let http = require("http");
 
-class EsiProcessor {
+class Nesi {
     constructor() {
         // precompile regular expressions
         this.attributeMatcher = /(\S+)=["']?((?:.(?!["']?\s+(?:\S+)=|[>"']))+.)["']?/g;
@@ -109,4 +109,4 @@ class EsiProcessor {
 
 }
 
-module.exports = EsiProcessor;
+module.exports = Nesi;
