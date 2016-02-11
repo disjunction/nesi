@@ -1,6 +1,6 @@
 "use strict";
 
-let http = require("http");
+let http = require("https");
 
 class Nesi {
     constructor() {
@@ -42,6 +42,7 @@ class Nesi {
         return new Promise((resolve, reject) => {
             let request = http.get(tag.attributes.src, result => {
                 let body = "";
+                result.setEncoding("utf8");
                 result.on("data", data => body += data)
                       .on("end", () => resolve(body));
             });
