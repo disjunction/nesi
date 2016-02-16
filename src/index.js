@@ -28,6 +28,19 @@ class Nesi {
         return tag;
     }
     
+    getUrlAsPromise(src) {
+        return new Promise((resolve, reject) => {
+            let request = http.get(src, result => {
+                let body = "";
+                result.setEncoding("utf8");
+                result.on("data", data => body += data)
+                      .on("end", () => resolve(body));
+            });
+
+            request.on("error", reject);
+        });
+    }
+
     /**
      * processes an (include) interpreted ESI tag
      *
@@ -39,16 +52,7 @@ class Nesi {
         if (!(tag instanceof Object)) {
             throw new Error("processTag expects a tag Object as parameter");
         }
-        return new Promise((resolve, reject) => {
-            let request = http.get(tag.attributes.src, result => {
-                let body = "";
-                result.setEncoding("utf8");
-                result.on("data", data => body += data)
-                      .on("end", () => resolve(body));
-            });
-
-            request.on("error", reject);
-        });
+        return this.getUrlAsPromise(tag.attributes.src);
     }
 
     /**
