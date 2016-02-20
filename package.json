@@ -1,6 +1,6 @@
 {
   "name": "nesi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Node.js ESI (edge side includes) standalone processor",
   "main": "src/index.js",
   "scripts": {
@@ -19,5 +19,8 @@
     "jasmine": "^2.3.2",
     "jasmine-spec-reporter": "^2.4.0",
     "nock": "^2.13.0"
+  },
+  "dependencies": {
+    "request-promise": "^2.0.1"
   }
 }

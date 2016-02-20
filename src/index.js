@@ -1,6 +1,6 @@
 "use strict";
 
-let http = require("https");
+let rp = require("request-promise");
 
 class Nesi {
     constructor() {
@@ -28,19 +28,6 @@ class Nesi {
         return tag;
     }
     
-    getUrlAsPromise(src) {
-        return new Promise((resolve, reject) => {
-            let request = http.get(src, result => {
-                let body = "";
-                result.setEncoding("utf8");
-                result.on("data", data => body += data)
-                      .on("end", () => resolve(body));
-            });
-
-            request.on("error", reject);
-        });
-    }
-
     /**
      * processes an (include) interpreted ESI tag
      *
@@ -52,7 +39,7 @@ class Nesi {
         if (!(tag instanceof Object)) {
             throw new Error("processTag expects a tag Object as parameter");
         }
-        return this.getUrlAsPromise(tag.attributes.src);
+        return rp(tag.attributes.src);
     }
 
     /**
